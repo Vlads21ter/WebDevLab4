@@ -1,0 +1,35 @@
+<html>
+<head> 
+  <title> Список завдань </title>
+  <link href="/styles.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container"> 
+  <h1> Список завдань </h1>
+
+  <form action ="/addtask" method="POST">
+
+  <input type="text" name="newtask" placeholder="Введіть нове завдання">
+  <button> Додати завдання </button>
+
+
+  <h2> Додані завдання </h2>
+  <ul>
+  <% for( var i = 0; i < task.length; i++){ %>
+      <li><input type="checkbox" name="check" value="<%= task[i] %>" /> <%= task[i] %> </li>
+  <% } %>
+  </ul>
+  <button formaction="/movetask" type="submit" id="top"> Виконати завдання </button>
+
+  <h2> Виконані завдання </h2>
+  <ul>
+   <% for(var i = 0; i < complete.length; i++){ %>
+      <li><input type="checkbox" checked><%= complete[i] %> </li>
+  <% } %>
+  </ul>
+  </form>
+  </div>
+
+</body>
+</html>
